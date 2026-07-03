@@ -17,7 +17,7 @@ mysql -u root -p < script_sistema_reservas.sql
 | `DEFAULT TRUE` / `DEFAULT 'Pendiente'` | Valores razonables por defecto: una habitación nueva está disponible, una reserva nueva queda pendiente. |
 | `Economica` sin acento | Evita caracteres corruptos al importar si la conexión no está en UTF-8. |
 
-> Nota: si ya corriste el script viejo, las tablas no se actualizan por el `IF NOT EXISTS`. Para aplicar los cambios: `DROP DATABASE SistemaReservas;` y volver a correr el script.
+
 
 ## Correr la API
 
