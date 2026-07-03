@@ -1,0 +1,222 @@
+{
+  "info": {
+    "name": "Sistema de Reservas",
+    "description": "API REST - Sistema de Reservas en Linea. Base URL en variable {{base_url}}.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "GET /usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/usuarios",
+              "host": ["{{base_url}}"],
+              "path": ["usuarios"]
+            }
+          }
+        },
+        {
+          "name": "GET /usuarios/1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/usuarios/1",
+              "host": ["{{base_url}}"],
+              "path": ["usuarios", "1"]
+            }
+          }
+        },
+        {
+          "name": "POST /usuarios",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Nombre\": \"Carlos\",\n    \"Apellido\": \"Hernandez\",\n    \"Email\": \"carlos@email.com\",\n    \"Contrasena\": \"123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/usuarios",
+              "host": ["{{base_url}}"],
+              "path": ["usuarios"]
+            }
+          }
+        },
+        {
+          "name": "PUT /usuarios/1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Nombre\": \"Ana\",\n    \"Apellido\": \"Perez Actualizado\",\n    \"Email\": \"ana.nueva@email.com\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/usuarios/1",
+              "host": ["{{base_url}}"],
+              "path": ["usuarios", "1"]
+            }
+          }
+        },
+        {
+          "name": "DELETE /usuarios/5",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/usuarios/5",
+              "host": ["{{base_url}}"],
+              "path": ["usuarios", "5"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Habitaciones",
+      "item": [
+        {
+          "name": "GET /habitaciones",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/habitaciones",
+              "host": ["{{base_url}}"],
+              "path": ["habitaciones"]
+            }
+          }
+        },
+        {
+          "name": "GET /habitaciones/1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/habitaciones/1",
+              "host": ["{{base_url}}"],
+              "path": ["habitaciones", "1"]
+            }
+          }
+        },
+        {
+          "name": "POST /habitaciones",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"TipoHabitacion\": \"Presidencial\",\n    \"Descripcion\": \"Suite de lujo con jacuzzi\",\n    \"Precio\": 2500,\n    \"Disponibilidad\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/habitaciones",
+              "host": ["{{base_url}}"],
+              "path": ["habitaciones"]
+            }
+          }
+        },
+        {
+          "name": "PUT /habitaciones/1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"TipoHabitacion\": \"Individual\",\n    \"Descripcion\": \"Cama sencilla renovada\",\n    \"Precio\": 600,\n    \"Disponibilidad\": false\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/habitaciones/1",
+              "host": ["{{base_url}}"],
+              "path": ["habitaciones", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reservaciones",
+      "item": [
+        {
+          "name": "GET /reservaciones",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/reservaciones",
+              "host": ["{{base_url}}"],
+              "path": ["reservaciones"]
+            }
+          }
+        },
+        {
+          "name": "GET /reservaciones/1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/reservaciones/1",
+              "host": ["{{base_url}}"],
+              "path": ["reservaciones", "1"]
+            }
+          }
+        },
+        {
+          "name": "POST /reservaciones",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"UserID\": 2,\n    \"RoomID\": 3,\n    \"FechaInicio\": \"2026-08-01\",\n    \"FechaFin\": \"2026-08-05\",\n    \"EstadoReserva\": \"Confirmada\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/reservaciones",
+              "host": ["{{base_url}}"],
+              "path": ["reservaciones"]
+            }
+          }
+        },
+        {
+          "name": "PUT /reservaciones/1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"UserID\": 1,\n    \"RoomID\": 1,\n    \"FechaInicio\": \"2026-07-01\",\n    \"FechaFin\": \"2026-07-10\",\n    \"EstadoReserva\": \"Cancelada\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/reservaciones/1",
+              "host": ["{{base_url}}"],
+              "path": ["reservaciones", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
